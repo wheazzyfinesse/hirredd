@@ -27,11 +27,19 @@ const Footer = () => {
                         </Link>
                     </div>
                 </div>
-                <p className="text-center text-sm text-muted-foreground">
-                    &copy; {new Date().getFullYear()} Hirredd Jobs. All rights
-                    reserved.
-                </p>
             </div>
+            <p className="text-center text-sm text-muted-foreground">
+                &copy; {new Date().getFullYear()} Hirredd Jobs. All rights
+                reserved.
+            </p>
+            <p className="text-center">
+                <Link
+                    className="text-sm text-green-500 hover:text-green-900 hover:underline"
+                    href="http://techfinesse.studio"
+                >
+                    Developed by Techfinesse Studio
+                </Link>
+            </p>
         </footer>
     );
 };

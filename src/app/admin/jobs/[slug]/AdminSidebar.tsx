@@ -19,12 +19,7 @@ const AdminSidebar = ({ job }: AdminSidebarProps) => {
             ) : (
                 <ApprovedSubmissionButton jobId={job.id} />
             )}
-            <FormSubmitButton
-                onClick={() => setShowModal(true)}
-                className="w-full bg-blue-500 hover:bg-blue-600"
-            >
-                Edit
-            </FormSubmitButton>
+
             <DeleteJobButton jobId={job.id} />
         </aside>
     );

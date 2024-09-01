@@ -39,7 +39,7 @@ export const generateMetadata = async ({
     };
 };
 
-export const JobPage = async ({ params: { slug } }: SlugProps) => {
+const JobPage = async ({ params: { slug } }: SlugProps) => {
     const job = await getJob(slug);
     const { applicationEmail, applicationUrl } = job;
     const applicationLink = applicationEmail

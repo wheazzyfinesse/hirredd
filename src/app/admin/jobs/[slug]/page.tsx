@@ -13,7 +13,7 @@ const AdminJobPage = async ({ params: { slug } }: PageProps) => {
         where: { slug },
     });
 
-    if (!job) NotFound();
+    if (!job) return NotFound();
 
     return (
         <main className="m-auto my-10 flex max-w-5xl flex-col items-center gap-5 px-3 md:flex-row md:items-start">
