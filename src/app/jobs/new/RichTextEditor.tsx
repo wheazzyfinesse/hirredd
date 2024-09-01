@@ -7,7 +7,7 @@ const Editor = dynamic(
     () => import("react-draft-wysiwyg").then((mod) => mod.Editor),
     { ssr: false }
 );
-const RichTextEditor = forwardRef<Object, EditorProps>((props, ref) => {
+const RichTextEditor = forwardRef<object, EditorProps>((props, ref) => {
     return (
         <Editor
             {...props}
@@ -32,5 +32,5 @@ const RichTextEditor = forwardRef<Object, EditorProps>((props, ref) => {
         />
     );
 });
-
+RichTextEditor.displayName = "RichTextEditor";
 export default RichTextEditor;

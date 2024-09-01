@@ -1,9 +1,9 @@
 import { cache } from "react";
 import prisma from "@/lib/prisma";
-import { notFound } from "next/navigation";
 import { Metadata } from "next";
 import JobDetails from "@/components/JobDetails";
 import { Button } from "@/components/ui/button";
+import NotFound from "@/app/not-found";
 
 interface SlugProps {
     params: {
@@ -17,7 +17,7 @@ const getJob = cache(async (slug: string) => {
         where: { slug },
     });
 
-    if (!job) notFound();
+    if (!job) NotFound();
 
     return job;
 });
@@ -35,20 +35,26 @@ export const generateMetadata = async ({
 }: SlugProps): Promise<Metadata> => {
     const job = await getJob(slug);
     return {
-        title: job.title,
+        title: job?.title,
     };
 };
 
 const JobPage = async ({ params: { slug } }: SlugProps) => {
     const job = await getJob(slug);
+
+    if (!job) {
+        return NotFound();
+    }
     const { applicationEmail, applicationUrl } = job;
     const applicationLink = applicationEmail
         ? `mailto:${applicationEmail}`
         : applicationUrl;
+
     if (!applicationLink) {
         console.log("Job has no application Link or email");
-        notFound();
+        return NotFound();
     }
+
     return (
         <main className="m-auto my-10 flex max-w-5xl flex-col items-center gap-5 px-5 md:flex-row md:items-start">
             <JobDetails job={job} />

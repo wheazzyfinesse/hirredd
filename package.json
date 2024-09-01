@@ -4,9 +4,8 @@
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "tsc && next build",
         "start": "next start",
-        "lint": "next lint",
         "seed": "node scripts/seed.js",
         "postinstall": "prisma generate"
     },
@@ -41,12 +40,6 @@
         "@types/react": "^18",
         "@types/react-dom": "^18",
         "@types/react-draft-wysiwyg": "^1.13.8",
-        "@typescript-eslint/eslint-plugin": "^8.3.0",
-        "@typescript-eslint/parser": "^8.3.0",
-        "eslint": "^8",
-        "eslint-config-next": "14.2.7",
-        "eslint-config-prettier": "^9.1.0",
-        "eslint-plugin-prettier": "^5.2.1",
         "or": "^0.2.0",
         "postcss": "^8",
         "prettier": "^3.3.3",
