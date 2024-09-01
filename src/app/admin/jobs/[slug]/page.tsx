@@ -8,7 +8,7 @@ interface PageProps {
         slug: string;
     };
 }
-const page = async ({ params: { slug } }: PageProps) => {
+const AdminJobPage = async ({ params: { slug } }: PageProps) => {
     const job = await prisma.job.findUnique({
         where: { slug },
     });
@@ -23,4 +23,4 @@ const page = async ({ params: { slug } }: PageProps) => {
     );
 };
 
-export default page;
+export default AdminJobPage;

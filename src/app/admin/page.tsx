@@ -3,7 +3,7 @@ import H1 from "@/components/ui/h1";
 import prisma from "@/lib/prisma";
 import Link from "next/link";
 
-const page = async () => {
+const AdminPage = async () => {
     const unapprovedJobs = await prisma?.job.findMany({
         where: {
             approved: false,
@@ -46,4 +46,4 @@ const page = async () => {
     );
 };
 
-export default page;
+export default AdminPage;

@@ -39,7 +39,7 @@ export const generateMetadata = async ({
     };
 };
 
-export const page = async ({ params: { slug } }: SlugProps) => {
+export const JobPage = async ({ params: { slug } }: SlugProps) => {
     const job = await getJob(slug);
     const { applicationEmail, applicationUrl } = job;
     const applicationLink = applicationEmail
@@ -63,4 +63,4 @@ export const page = async ({ params: { slug } }: SlugProps) => {
     );
 };
 
-export default page;
+export default JobPage;
