@@ -1,0 +1,35 @@
+{
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    "typescript.format.enable": true,
+    "javascript.format.enable": true,
+    "css.validate": false, // disable built-in validation for CSS since Tailwind does that
+    "tailwindCSS.experimental.classRegex": [
+        "tw`([^`]*)",
+        "tw\\(([^)]*)\\)",
+        "cn\\(([^)]*)\\)"
+    ],
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnPaste": false,
+    "editor.formatOnType": true,
+    "notebook.formatOnSave.enabled": true,
+    "files.associations": {
+        ".css": "tailwindcss"
+    },
+    "material-icon-theme.files.associations": {},
+    "editor.quickSuggestions": {
+        "strings": "on"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.suggest.shareSuggestSelections": false,
+    "emmet.triggerExpansionOnTab": true,
+    "editor.tabCompletion": "on",
+    "editor.suggest.preview": true,
+    "terminal.integrated.suggest.enabled": true,
+    "editor.useTabStops": false,
+    "editor.tabFocusMode": false
+}
